@@ -1,23 +1,30 @@
-import { createBrowserRouter } from "react-router-dom"
+import { createBrowserRouter } from "react-router-dom";
+import App from "../App";
+import { BuscadorProductos } from "../pages/BuscadorProductos";
 
 export const routesNames = {
-    Inicio: "/",
-    Funcion: "/functions",
-    Contacto: "/contact",
-}
-
+  Inicio: "/",
+  Funcion: "/functions",
+  Contacto: "/contact",
+};
 
 export const router = createBrowserRouter([
-    {
+  {
+    path: routesNames.Inicio,
+    element: <App />,
+    children: [
+      {
         path: routesNames.Inicio,
-        element: <div> Hola </div>
-    },
-    {
+        element: <BuscadorProductos />,
+      },
+      {
         path: routesNames.Funcion,
-        element: <div> Fc </div>
-    },
-    {
+        element: <div> Fc </div>,
+      },
+      {
         path: routesNames.Contacto,
-        element: <div> Conta </div>
-    },
-])
+        element: <div> Conta </div>,
+      },
+    ],
+  },
+]);
