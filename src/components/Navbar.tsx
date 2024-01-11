@@ -1,3 +1,4 @@
+import { routesNames } from "../routes/routes";
 import { NavbarLink } from "./NavbarLink";
 
 export function Navbar() {
@@ -11,10 +12,10 @@ export function Navbar() {
       </div>
 
       <div className="gap-6 hidden md:flex">
-        <NavbarLink label="Inicio" to="/" />
-        <NavbarLink label="Función" to="/" />
+        <NavbarLink label="Inicio" to={routesNames.Inicio} />
+        <NavbarLink label="Función" to={routesNames.Funcion} />
         <NavbarLink label="Documentación" to="/" />
-        <NavbarLink label="Contacto" to="/" />
+        <NavbarLink label="Contacto" to={routesNames.Contacto} />
       </div>
     </nav>
   );

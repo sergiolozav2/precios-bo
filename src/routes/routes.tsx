@@ -1,6 +1,8 @@
 import { createBrowserRouter } from "react-router-dom";
 import App from "../App";
 import { SearchProductsPage } from "../pages/SearchProductsPage";
+import { FunctionPage } from "../pages/FunctionPage";
+import { ContactPage } from "../pages/ContactPage";
 
 export const routesNames = {
   Inicio: "/",
@@ -19,11 +21,11 @@ export const router = createBrowserRouter([
       },
       {
         path: routesNames.Funcion,
-        element: <div> Fc </div>,
+        element: <FunctionPage />,
       },
       {
         path: routesNames.Contacto,
-        element: <div> Conta </div>,
+        element: <ContactPage />,
       },
     ],
   },
