@@ -1,6 +1,6 @@
 import { PageHeaderWrapper } from "../components/PageHeaderWrapper";
 
-export function BuscadorProductos() {
+export function SearchProductsPage() {
   return (
     <PageHeaderWrapper>
       <div className="mt-16 px-6 flex text-center flex-col w-full items-center justify-center text-white">

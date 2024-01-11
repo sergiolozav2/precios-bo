@@ -1,6 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
 import App from "../App";
-import { BuscadorProductos } from "../pages/BuscadorProductos";
+import { SearchProductsPage } from "../pages/SearchProductsPage";
 
 export const routesNames = {
   Inicio: "/",
@@ -15,7 +15,7 @@ export const router = createBrowserRouter([
     children: [
       {
         path: routesNames.Inicio,
-        element: <BuscadorProductos />,
+        element: <SearchProductsPage />,
       },
       {
         path: routesNames.Funcion,
