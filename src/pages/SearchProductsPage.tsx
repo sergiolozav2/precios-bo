@@ -13,6 +13,11 @@ export function SearchProductsPage() {
     setSearch(event.currentTarget.value);
   }
 
+  function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    handleSearchButton();
+  }
+
   return (
     <>
       <PageHeaderWrapper>
@@ -24,20 +29,22 @@ export function SearchProductsPage() {
             Busca y compara productos ofrecidos por distintos supermercados
             bolivianos
           </h2>
-          <div className="mt-4 flex gap-2">
-            <input
-              className="px-4 py-2 rounded-lg text-lg outline-none text-black"
-              onChange={handleInput}
-              type="text"
-              placeholder="Busca comida, bebidas, dulces..."
-            />
-            <button
-              className="px-2 rounded-lg font-semibold bg-violet-900"
-              onClick={handleSearchButton}
-            >
-              Buscar
-            </button>
-          </div>
+          <form onSubmit={handleSubmit}>
+            <div className="mt-4 flex gap-2">
+              <input
+                className="px-4 py-2 rounded-lg text-lg outline-none text-black"
+                onChange={handleInput}
+                type="text"
+                placeholder="Busca comida, bebidas, dulces..."
+              />
+              <button
+                className="px-2 rounded-lg font-semibold bg-violet-900"
+                onClick={handleSearchButton}
+              >
+                Buscar
+              </button>
+            </div>
+          </form>
         </div>
       </PageHeaderWrapper>
       <div> {loading ? "..." : JSON.stringify(data)}</div>
