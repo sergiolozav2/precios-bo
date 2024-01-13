@@ -1,16 +1,17 @@
+import { useState } from "react";
 import { searchProducts } from "../services/searchProducts";
-import { useApi } from "./useApi";
-import { ProductType } from "../types/Product";
+import { useQuery } from "@tanstack/react-query";
 
-export function useSearchProducts(query: string) {
-  const { data, loading, error, fetchData } = useApi<ProductType[]>({
+export function useSearchProducts(initialQuery: string) {
+  const [query, setQuery] = useState(initialQuery);
+  const { data, isLoading, error } = useQuery({
     queryKey: ["search-products", query],
     queryFn: () => searchProducts(query),
   });
   return {
-    data,
-    loading,
+    data: data?.data,
+    loading: isLoading,
     error,
-    searchProducts: fetchData,
+    searchProducts: (newQuery: string) => setQuery(newQuery),
   };
 }
