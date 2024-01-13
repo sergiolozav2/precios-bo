@@ -1,11 +1,11 @@
 import { useState } from "react";
 import { PageHeaderWrapper } from "../components/PageHeaderWrapper";
 import { useSearchProducts } from "../services-hooks/useSearchProducts";
+import { ProductsList } from "../components/ProductsList";
 
 export function SearchProductsPage() {
   const [search, setSearch] = useState("");
-  const { data, loading, searchProducts } = useSearchProducts(search);
-
+  const { data, searchProducts } = useSearchProducts(search);
   function handleSearchButton() {
     searchProducts();
   }
@@ -17,7 +17,6 @@ export function SearchProductsPage() {
     event.preventDefault();
     handleSearchButton();
   }
-
   return (
     <>
       <PageHeaderWrapper>
@@ -47,7 +46,7 @@ export function SearchProductsPage() {
           </form>
         </div>
       </PageHeaderWrapper>
-      <div> {loading ? "..." : JSON.stringify(data)}</div>
+      <div className="mt-6 max-w-4xl mx-auto"> {data && <ProductsList products={data} />}</div>
     </>
   );
 }
