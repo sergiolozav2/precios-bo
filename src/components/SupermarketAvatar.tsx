@@ -20,6 +20,7 @@ function marketNameToImage(marketName: string) {
     Farmacorp: "/assets/farmacorp-logo.png",
     Fidalga: "/assets/fidalga-logo.png",
     Icnorte: "/assets/icnorte-logo.jpg",
+    "El GenioX": "/assets/geniox-logo.png",
   };
 
   return mapMarketToImage[marketName];
