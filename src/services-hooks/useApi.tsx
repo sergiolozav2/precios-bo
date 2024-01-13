@@ -2,24 +2,29 @@ import { useState } from "react";
 import { useQueryClient } from "@tanstack/react-query";
 
 type useApiOptions = {
-  queryFn: () => void;
+  queryFn: () => unknown;
   queryKey: string[];
 };
 
-export function useApi(options: useApiOptions) {
-  const [data, setData] = useState<unknown>(undefined);
+type UseApiReturnType<T> =
+  | {
+      data: T;
+    }
+  | undefined;
+export function useApi<T>(options: useApiOptions) {
+  const [data, setData] = useState<UseApiReturnType<T>>(undefined);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<unknown>(undefined);
   const queryClient = useQueryClient();
   async function fetchData() {
     setLoading(true);
     try {
-      const cache = await queryClient.ensureQueryData<unknown>(options);
+      const cache = await queryClient.ensureQueryData(options);
       if (cache) {
-        setData(cache);
+        setData(cache as UseApiReturnType<T>);
       } else {
         const data = await queryClient.fetchQuery(options);
-        setData(data);
+        setData(data as UseApiReturnType<T>);
       }
     } catch (error) {
       setData(undefined);
@@ -28,5 +33,8 @@ export function useApi(options: useApiOptions) {
       setLoading(false);
     }
   }
-  return { data, error, loading, fetchData };
+  if (data?.data) {
+    return { data: data.data, error, loading, fetchData };
+  }
+  return { error, loading, fetchData };
 }
