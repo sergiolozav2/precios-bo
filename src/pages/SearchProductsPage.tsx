@@ -28,7 +28,7 @@ export function SearchProductsPage() {
             Busca y compara productos ofrecidos por tiendas online bolivianas
           </h2>
           <form
-            className="mt-4 gap-2 max-w-72 w-full flex flex-col sm:flex-row justify-center"
+            className="mt-4 gap-2 max-w-96 w-full flex flex-col sm:flex-row justify-center"
             onSubmit={handleSubmit}
           >
             <input
