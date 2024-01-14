@@ -12,7 +12,7 @@ type LoadingWrapperType = {
 export function LoadingWrapper(props: LoadingWrapperType) {
   const { size = "24px", strokeWidth = 3, color } = props;
   return (
-    <div className="relative">
+    <div className="h-fit w-fit relative">
       {props.children}
       {props.loading && (
         <div
