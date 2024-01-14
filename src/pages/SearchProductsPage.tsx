@@ -34,7 +34,7 @@ export function SearchProductsPage() {
             onSubmit={handleSubmit}
           >
             <input
-              className="px-4 py-2 w-full rounded-lg md:text-lg outline-none text-black"
+              className="px-4 py-2 w-full rounded-lg outline-none text-black"
               onChange={handleInput}
               type="text"
               placeholder="Busca comida, bebidas, dulces..."
