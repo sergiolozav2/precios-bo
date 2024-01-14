@@ -2,10 +2,12 @@ import { useState } from "react";
 import { PageHeaderWrapper } from "../components/PageHeaderWrapper";
 import { useSearchProducts } from "../services-hooks/useSearchProducts";
 import { ProductsList } from "../components/ProductsList";
+import { LoadingWrapper } from "../components/LoadingWrapper";
+import { ProductsListSkeleton } from "../components/ProductsListSkeleton";
 
 export function SearchProductsPage() {
   const [search, setSearch] = useState("laptop");
-  const { data, searchProducts } = useSearchProducts(search);
+  const { data, loading, searchProducts } = useSearchProducts(search);
   function handleSearchButton() {
     searchProducts(search);
   }
@@ -37,17 +39,20 @@ export function SearchProductsPage() {
               type="text"
               placeholder="Busca comida, bebidas, dulces..."
             />
-            <button
-              className="px-2 py-2 rounded-lg font-semibold bg-violet-900"
-              onClick={handleSearchButton}
-            >
-              Buscar
-            </button>
+            <LoadingWrapper className="rounded-lg" loading={loading}>
+              <button
+                className="px-2 py-2 w-full rounded-lg font-semibold bg-violet-900"
+                onClick={handleSearchButton}
+              >
+                Buscar
+              </button>
+            </LoadingWrapper>
           </form>
         </div>
       </PageHeaderWrapper>
       <div className="mt-6 max-w-4xl mx-auto">
-        {data && <ProductsList products={data.items} />}
+        {!loading && data && <ProductsList products={data.items} />}
+        {loading && <ProductsListSkeleton quantity={9} />}
       </div>
     </>
   );
