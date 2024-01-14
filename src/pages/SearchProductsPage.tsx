@@ -6,7 +6,7 @@ import { LoadingWrapper } from "../components/LoadingWrapper";
 import { ProductsListSkeleton } from "../components/ProductsListSkeleton";
 
 export function SearchProductsPage() {
-  const [search, setSearch] = useState("laptop");
+  const [search, setSearch] = useState("");
   const { data, loading, searchProducts } = useSearchProducts(search);
   function handleSearchButton() {
     searchProducts(search);
