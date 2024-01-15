@@ -1,23 +1,22 @@
-import { useState } from "react";
 import { PageHeaderWrapper } from "../../components/PageHeaderWrapper";
 import { useSearchProducts } from "../../hooks/useSearchProducts";
 import { LoadingWrapper } from "../../components/LoadingWrapper";
 import { ContentProductPage } from "./ContentProductPage";
+import { useSearchQueryParams } from "../../hooks/useSearchQueryParams";
 
+export const searchName = "search";
 export function SearchProductsPage() {
-  const [search, setSearch] = useState("");
+  const { getValue, updateQuery } = useSearchQueryParams();
+  const searchValue = getValue(searchName, "");
   const { data, loading, neverCalled, searchProducts } =
-    useSearchProducts(search);
-  function handleSearchButton() {
-    searchProducts(search);
-  }
-  function handleInput(event: React.FormEvent<HTMLInputElement>) {
-    setSearch(event.currentTarget.value);
-  }
+    useSearchProducts(searchValue);
 
   function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    handleSearchButton();
+    const formData = new FormData(event.currentTarget);
+    const query = formData.get(searchName)?.toString() ?? "";
+    updateQuery(searchName, query);
+    searchProducts(query);
   }
   return (
     <>
@@ -35,15 +34,13 @@ export function SearchProductsPage() {
           >
             <input
               className="px-4 py-2 w-full rounded-lg outline-none text-black"
-              onChange={handleInput}
+              defaultValue={searchValue}
+              name={searchName}
               type="text"
               placeholder="Busca comida, bebidas, dulces..."
             />
             <LoadingWrapper className="rounded-lg" loading={loading}>
-              <button
-                className="px-2 py-2 w-full rounded-lg font-semibold bg-violet-900"
-                onClick={handleSearchButton}
-              >
+              <button className="px-2 py-2 w-full rounded-lg font-semibold bg-violet-900">
                 Buscar
               </button>
             </LoadingWrapper>
