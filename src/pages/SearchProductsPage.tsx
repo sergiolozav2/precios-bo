@@ -1,13 +1,13 @@
 import { useState } from "react";
 import { PageHeaderWrapper } from "../components/PageHeaderWrapper";
-import { useSearchProducts } from "../services-hooks/useSearchProducts";
-import { ProductsList } from "../components/ProductsList";
+import { useSearchProducts } from "../hooks/useSearchProducts";
 import { LoadingWrapper } from "../components/LoadingWrapper";
-import { ProductsListSkeleton } from "../components/ProductsListSkeleton";
+import { ContentProductPage } from "../components/SearchProductPage/ContentProductPage";
 
 export function SearchProductsPage() {
   const [search, setSearch] = useState("");
-  const { data, loading, searchProducts } = useSearchProducts(search);
+  const { data, loading, neverCalled, searchProducts } =
+    useSearchProducts(search);
   function handleSearchButton() {
     searchProducts(search);
   }
@@ -22,15 +22,15 @@ export function SearchProductsPage() {
   return (
     <>
       <PageHeaderWrapper>
-        <div className="mt-8 py-8 px-6 flex text-center flex-col w-full items-center justify-center text-white">
-          <h1 className="text-xl md:text-3xl font-bold">
+        <div className="mt-2 sm:mt-8 py-8 px-6 flex text-center flex-col w-full items-center justify-center text-white">
+          <h1 className="text-2xl sm:text-3xl font-semibold">
             Comparador de precios Bolivia
           </h1>
-          <h2 className="mt-2 text-lg md:text-xl">
+          <h2 className="mt-2 text-base sm:text-2xl">
             Busca y compara productos ofrecidos por tiendas online bolivianas
           </h2>
           <form
-            className="mt-4 gap-2 max-w-96 w-full flex flex-col sm:flex-row justify-center"
+            className="mt-4 gap-2 max-w-[30rem] sm:text-xl w-full flex flex-col sm:flex-row justify-center"
             onSubmit={handleSubmit}
           >
             <input
