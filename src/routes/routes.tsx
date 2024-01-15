@@ -1,6 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
 import App from "../App";
-import { SearchProductsPage } from "../pages/SearchProductsPage";
+import { SearchProductsPage } from "../modules/searchProducts/SearchProductsPage";
 import { FunctionPage } from "../pages/FunctionPage";
 import { ContactPage } from "../pages/ContactPage";
 

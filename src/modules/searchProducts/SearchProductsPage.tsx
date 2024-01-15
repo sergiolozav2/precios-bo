@@ -1,8 +1,8 @@
 import { useState } from "react";
-import { PageHeaderWrapper } from "../components/PageHeaderWrapper";
-import { useSearchProducts } from "../hooks/useSearchProducts";
-import { LoadingWrapper } from "../components/LoadingWrapper";
-import { ContentProductPage } from "../components/SearchProductPage/ContentProductPage";
+import { PageHeaderWrapper } from "../../components/PageHeaderWrapper";
+import { useSearchProducts } from "../../hooks/useSearchProducts";
+import { LoadingWrapper } from "../../components/LoadingWrapper";
+import { ContentProductPage } from "./ContentProductPage";
 
 export function SearchProductsPage() {
   const [search, setSearch] = useState("");

@@ -1,4 +1,4 @@
-import { SvgIcon } from "./SvgIcon";
+import { SvgIcon } from "../../../components/SvgIcon";
 
 type FeatureCardType = {
   title: string;

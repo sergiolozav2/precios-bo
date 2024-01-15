@@ -1,7 +1,7 @@
 import { ProductType } from "../../types/Product";
-import { FeaturesList } from "../FeaturesList";
-import { ProductsList } from "../ProductsList";
-import { ProductsListSkeleton } from "../ProductsListSkeleton";
+import { FeaturesList } from "./components/FeaturesList";
+import { ProductsList } from "./components/ProductsList";
+import { ProductsListSkeleton } from "./components/ProductsListSkeleton";
 
 type ContentProductPageType = {
   loading: boolean;

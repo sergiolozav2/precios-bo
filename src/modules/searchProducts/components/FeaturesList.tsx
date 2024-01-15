@@ -1,5 +1,5 @@
 import { FeatureCard } from "./FeatureCard";
-import { Icons } from "./SvgIcon";
+import { Icons } from "../../../components/SvgIcon";
 
 export function FeaturesList() {
   return (

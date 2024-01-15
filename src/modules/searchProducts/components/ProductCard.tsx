@@ -1,4 +1,4 @@
-import { ProductType } from "../types/Product";
+import { ProductType } from "../../../types/Product";
 import { SupermarketAvatar } from "./SupermarketAvatar";
 
 type ProductCardType = {
