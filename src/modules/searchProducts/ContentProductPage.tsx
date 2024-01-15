@@ -2,6 +2,7 @@ import { ProductType } from "../../types/Product";
 import { FeaturesList } from "./components/FeaturesList";
 import { ProductsList } from "./components/ProductsList";
 import { ProductsListSkeleton } from "./components/ProductsListSkeleton";
+import { ProductsResults } from "./components/ProductsResults";
 
 type ContentProductPageType = {
   loading: boolean;
@@ -15,8 +16,16 @@ export function ContentProductPage(props: ContentProductPageType) {
   }
 
   if (props.data && !props.loading) {
-    return <ProductsList products={props.data.items} />;
+    return (
+      <ProductsResults numberResults={props.data.items.length}>
+        <ProductsList products={props.data.items} />
+      </ProductsResults>
+    );
   }
 
-  return <ProductsListSkeleton quantity={9} />;
+  return (
+    <ProductsResults numberResults={0}>
+      <ProductsListSkeleton quantity={9} />
+    </ProductsResults>
+  );
 }
