@@ -1,0 +1,24 @@
+import { FeatureCard } from "./FeatureCard";
+import { Icons } from "./SvgIcon";
+
+export function FeaturesList() {
+  return (
+    <div className="mt-4 px-4 gap-4 sm:gap-24 h-full flex flex-col items-center justify-center w-full sm:flex-row sm:flex-wrap">
+      <FeatureCard
+        title="Encuentra productos"
+        description="Encuentra ropa, comida, laptops, bebidas, etc."
+        iconName={Icons.FaShoppingCart}
+      />
+      <FeatureCard
+        title="Ahorra dinero"
+        description="Ahorra dinero al comparar precios en múltiples tiendas."
+        iconName={Icons.FaMoneyCheckDollar}
+      />
+      <FeatureCard
+        title="Más rápido"
+        description="Puedes encontrar rápidamente productos."
+        iconName={Icons.MdOutlineMoreTime}
+      />
+    </div>
+  );
+}
