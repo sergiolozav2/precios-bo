@@ -50,9 +50,12 @@ export function SearchProductsPage() {
           </form>
         </div>
       </PageHeaderWrapper>
-      <div className="mt-6 max-w-4xl mx-auto">
-        {!loading && data && <ProductsList products={data.items} />}
-        {loading && <ProductsListSkeleton quantity={9} />}
+      <div className="max-w-6xl mx-auto">
+        <ContentProductPage
+          data={data}
+          loading={loading}
+          neverCalled={neverCalled}
+        />
       </div>
     </>
   );
