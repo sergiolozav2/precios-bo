@@ -1,11 +1,15 @@
+import { useState } from "react";
 import { ProductType } from "../../../types/Product";
 import { SupermarketAvatar } from "./SupermarketAvatar";
 
 type ProductCardType = {
   product: ProductType;
+  imageFallback: string;
 };
 export function ProductCard(props: ProductCardType) {
   const product = props.product;
+
+  const [imageSrc, setImageSrc] = useState(props.product.image)
   return (
     <div className="flex flex-col justify-between">
       <div className="flex w-full flex-col items-center">
@@ -14,7 +18,8 @@ export function ProductCard(props: ProductCardType) {
             <img
               className="h-32 mix-blend-multiply group-hover:scale-110 transition-transform"
               alt={product.title}
-              src={product.image}
+              src={imageSrc}
+              onError={() => setImageSrc(props.imageFallback)}
             />
           </a>
         </div>
