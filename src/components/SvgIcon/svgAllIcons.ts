@@ -4,4 +4,5 @@ export const Icons = {
     FaShoppingCart: "faShoppingCart",
     MdOutlineMoreTime: "mdOutlineMoreTime",
     MdKeyboardDoubleArrowUp: "mdKeyboardDoubleArrowUp",
+    IoMdClose: "ioMdClose"
   };
