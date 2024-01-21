@@ -3,6 +3,10 @@ import { useSearchProducts } from "../../hooks/useSearchProducts";
 import { LoadingWrapper } from "../../components/LoadingWrapper";
 import { ContentProductPage } from "./ContentProductPage";
 import { useSearchQueryParams } from "../../hooks/useSearchQueryParams";
+import {
+  FloatingButton,
+} from "../favoriteProducts/FloatingButton";
+import { FavoriteProductsModal } from "../favoriteProducts/FavoriteProductsModal";
 
 export const searchName = "search";
 export function SearchProductsPage() {
@@ -54,6 +58,9 @@ export function SearchProductsPage() {
           neverCalled={neverCalled}
         />
       </div>
+      <FloatingButton>
+        <FavoriteProductsModal />
+      </FloatingButton>
     </>
   );
 }
