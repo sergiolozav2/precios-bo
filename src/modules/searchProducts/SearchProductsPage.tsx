@@ -6,7 +6,7 @@ import { useSearchQueryParams } from "../../hooks/useSearchQueryParams";
 import {
   FloatingButton,
 } from "../favoriteProducts/FloatingButton";
-import { FavoriteProductsModal } from "../favoriteProducts/FavoriteProductsModal";
+import { FavoriteProductsDialog } from "../favoriteProducts/FavoriteProductsDialog";
 
 export const searchName = "search";
 export function SearchProductsPage() {
@@ -59,7 +59,7 @@ export function SearchProductsPage() {
         />
       </div>
       <FloatingButton>
-        <FavoriteProductsModal />
+        <FavoriteProductsDialog />
       </FloatingButton>
     </>
   );

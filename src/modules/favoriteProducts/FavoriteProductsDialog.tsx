@@ -1,9 +1,9 @@
 import { Icons, SvgIcon } from "../../components/SvgIcon";
 import { useModal } from "../hooks/useModal";
 
-export const FavoritesModalURLName = "favoritesModal";
-export function FavoriteProductsModal() {
-  const { toggleModal } = useModal(FavoritesModalURLName);
+export const FavoritesDialogURLName = "favoritesModal";
+export function FavoriteProductsDialog() {
+  const { toggleModal } = useModal(FavoritesDialogURLName);
   return (
     <div className="inset-0 top-auto rounded-t-md sm:left-auto sm:right-12 sm:bottom-3 fixed bg-stone-50">
       <div className="min-w-64 relative flex flex-col">

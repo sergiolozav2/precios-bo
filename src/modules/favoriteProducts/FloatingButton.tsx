@@ -7,14 +7,14 @@ import {
 } from "@radix-ui/react-dialog";
 import { Icons, SvgIcon } from "../../components/SvgIcon";
 import { useModal } from "../hooks/useModal";
-import { FavoritesModalURLName } from "./FavoriteProductsModal";
+import { FavoritesDialogURLName } from "./FavoriteProductsDialog";
 
 type FloatingButtonType = {
   children: React.ReactNode;
 };
 
 export function FloatingButton(props: FloatingButtonType) {
-  const { show, toggleModal } = useModal(FavoritesModalURLName);
+  const { show, toggleModal } = useModal(FavoritesDialogURLName);
   return (
     <div className="fixed right-12 bottom-3">
       <Dialog open={show}>
