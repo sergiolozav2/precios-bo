@@ -37,7 +37,7 @@ export function FloatingButton(props: FloatingButtonType) {
         </DialogTrigger>
         <DialogPortal>
           <DialogOverlay className="inset-0 fixed bg-stone-900/10" />{" "}
-          <DialogContent>
+          <DialogContent onEscapeKeyDown={toggleModal}>
             {props.children}
           </DialogContent>
         </DialogPortal>
