@@ -23,7 +23,7 @@ export function FloatingButton(props: FloatingButtonType) {
             className="rounded-full aspect-square sm:aspect-auto sm:rounded-md font-medium text-stone-50 bg-violet-900"
             onClick={toggleModal}
           >
-            <div className="px-4 py-2 min-w-48 hidden sm:flex justify-between">
+            <div className="px-4 py-2 min-w-56 hidden sm:flex justify-between">
               <span> Mis favoritos </span>
               <SvgIcon
                 className="h-5"
@@ -37,7 +37,7 @@ export function FloatingButton(props: FloatingButtonType) {
         </DialogTrigger>
         <DialogPortal>
           <DialogOverlay className="inset-0 fixed bg-stone-900/10" />{" "}
-          <DialogContent className="right-12 bottom-2 fixed bg-stone-50">
+          <DialogContent className="right-12 bottom-3 fixed">
             {props.children}
           </DialogContent>
         </DialogPortal>
