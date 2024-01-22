@@ -3,10 +3,9 @@ import { useSearchProducts } from "../../hooks/useSearchProducts";
 import { LoadingWrapper } from "../../components/LoadingWrapper";
 import { ContentProductPage } from "./ContentProductPage";
 import { useSearchQueryParams } from "../../hooks/useSearchQueryParams";
-import {
-  FloatingButton,
-} from "../favoriteProducts/FloatingButton";
+import { FloatingButton } from "../favoriteProducts/FloatingButton";
 import { FavoriteProductsDialog } from "../favoriteProducts/FavoriteProductsDialog";
+import { FavoriteProductsProvider } from "../favoriteProducts/providers/FavoriteProductsProvider";
 
 export const searchName = "search";
 export function SearchProductsPage() {
@@ -23,7 +22,7 @@ export function SearchProductsPage() {
     searchProducts(query);
   }
   return (
-    <>
+    <FavoriteProductsProvider>
       <PageHeaderWrapper>
         <div className="mt-2 sm:mt-8 py-8 px-6 flex text-center flex-col w-full items-center justify-center text-white">
           <h1 className="text-2xl sm:text-3xl font-semibold">
@@ -61,6 +60,6 @@ export function SearchProductsPage() {
       <FloatingButton>
         <FavoriteProductsDialog />
       </FloatingButton>
-    </>
+    </FavoriteProductsProvider>
   );
 }
