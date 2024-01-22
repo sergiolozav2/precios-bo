@@ -7,7 +7,7 @@ export function useFavoriteProductsStorage() {
     getFavoritesFromLocalStorage()
   );
 
-  function saveProduct(product: ProductType) {
+  function saveOrDeleteProduct(product: ProductType) {
     const index = products.findIndex((p) => productsEqual(p, product));
 
     let newProducts: ProductType[] = [];
@@ -31,5 +31,5 @@ export function useFavoriteProductsStorage() {
     }
     return favorites;
   }
-  return { products, saveProduct };
+  return { products, saveOrDeleteProduct };
 }
