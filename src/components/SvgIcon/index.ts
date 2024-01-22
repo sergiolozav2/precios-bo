@@ -1,2 +1,4 @@
+import { Icons } from "./SvgAllIconPaths";
+
 export { SvgIcon } from "./SvgIcon";
-export { Icons } from "./svgAllIcons"
+export type IconTypes = keyof typeof Icons
