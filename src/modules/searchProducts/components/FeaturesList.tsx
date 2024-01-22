@@ -1,5 +1,4 @@
 import { FeatureCard } from "./FeatureCard";
-import { Icons } from "../../../components/SvgIcon";
 
 export function FeaturesList() {
   return (
@@ -7,17 +6,17 @@ export function FeaturesList() {
       <FeatureCard
         title="Encuentra productos"
         description="Encuentra ropa, comida, laptops, bebidas, etc."
-        iconName={Icons.FaShoppingCart}
+        iconName="FaShoppingCart"
       />
       <FeatureCard
         title="Ahorra dinero"
         description="Ahorra dinero al comparar precios en múltiples tiendas."
-        iconName={Icons.FaMoneyCheckDollar}
+        iconName="FaMoneyCheckDollar"
       />
       <FeatureCard
         title="Más rápido"
         description="Puedes encontrar rápidamente productos."
-        iconName={Icons.MdOutlineMoreTime}
+        iconName="MdOutlineMoreTime"
       />
     </div>
   );

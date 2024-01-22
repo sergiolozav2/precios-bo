@@ -1,4 +1,4 @@
-import { Icons, SvgIcon } from "../../components/SvgIcon";
+import { SvgIcon } from "../../components/SvgIcon";
 import { useModal } from "../hooks/useModal";
 
 export const FavoritesDialogURLName = "favoritesModal";
@@ -8,7 +8,7 @@ export function FavoriteProductsDialog() {
     <div className="inset-0 top-auto rounded-t-md sm:left-auto sm:right-12 sm:bottom-3 fixed bg-stone-50">
       <div className="min-w-64 relative flex flex-col">
         <button className="absolute p-0.5 top-3 right-1.5 rounded-full hover:bg-stone-300" onClick={toggleModal}>
-          <SvgIcon className="h-5" iconName={Icons.IoMdClose} />
+          <SvgIcon className="h-5" iconName="IoMdClose" />
         </button>
         <div className="py-3 min-h-32 h-full flex flex-col text-center">
           <h3 className="px-4 text-sm font-semibold"> Productos favoritos </h3>

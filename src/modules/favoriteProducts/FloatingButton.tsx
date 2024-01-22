@@ -5,9 +5,9 @@ import {
   DialogPortal,
   DialogTrigger,
 } from "@radix-ui/react-dialog";
-import { Icons, SvgIcon } from "../../components/SvgIcon";
 import { useModal } from "../hooks/useModal";
 import { FavoritesDialogURLName } from "./FavoriteProductsDialog";
+import { SvgIcon } from "../../components/SvgIcon";
 
 type FloatingButtonType = {
   children: React.ReactNode;
@@ -25,13 +25,10 @@ export function FloatingButton(props: FloatingButtonType) {
           >
             <div className="px-4 py-2 min-w-56 hidden sm:flex justify-between">
               <span> Mis favoritos </span>
-              <SvgIcon
-                className="h-5"
-                iconName={Icons.MdKeyboardDoubleArrowUp}
-              />
+              <SvgIcon className="h-5" iconName="MdKeyboardDoubleArrowUp" />
             </div>
             <div className="p-3 sm:hidden">
-              <SvgIcon className="h-5" iconName={Icons.FaHeart}/>
+              <SvgIcon className="h-5" iconName="FaHeart" />
             </div>
           </button>
         </DialogTrigger>
