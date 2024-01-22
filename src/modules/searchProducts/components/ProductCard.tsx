@@ -1,17 +1,31 @@
 import { useState } from "react";
 import { ProductType } from "../../../types/Product";
 import { SupermarketAvatar } from "./SupermarketAvatar";
+import { SvgIcon } from "../../../components/SvgIcon";
 
 type ProductCardType = {
   product: ProductType;
   imageFallback: string;
+  onFavoriteClick: () => void;
+  isFavorite: boolean;
 };
 export function ProductCard(props: ProductCardType) {
   const product = props.product;
 
-  const [imageSrc, setImageSrc] = useState(props.product.image)
+  const [imageSrc, setImageSrc] = useState(props.product.image);
+
+  const heartColor = props.isFavorite ? "fill-red-500 stroke-red-500" : "stroke-stone-500";
   return (
-    <div className="flex flex-col justify-between">
+    <div className="relative flex flex-col justify-between">
+      <button
+        className="p-2 right-1.5 top-1.5 rounded-full absolute transition-colors hover:bg-stone-200"
+        onClick={props.onFavoriteClick}
+      >
+        <SvgIcon
+          className={`${heartColor} h-4 fill-none stroke-stone-500 stroke-[70px] overflow-visible`}
+          iconName="FaHeart"
+        />
+      </button>
       <div className="flex w-full flex-col items-center">
         <div className="py-4 group w-full grid place-items-center cursor-pointer bg-stone-100">
           <a href={product.link} target="_blank">
