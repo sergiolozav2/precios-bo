@@ -22,7 +22,6 @@ export function ProductsList(props: ProductsList) {
         <ProductCard
           key={product.title}
           product={product}
-          imageFallback="./assets/fallback-image.png"
           onFavoriteClick={() => saveOrDeleteProduct(product)}
           isFavorite={!!products.find((p) => p.title === product.title)}
         />

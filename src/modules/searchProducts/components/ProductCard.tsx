@@ -5,7 +5,6 @@ import { SvgIcon } from "../../../components/SvgIcon";
 
 type ProductCardType = {
   product: ProductType;
-  imageFallback: string;
   onFavoriteClick: () => void;
   isFavorite: boolean;
 };
@@ -13,6 +12,7 @@ export function ProductCard(props: ProductCardType) {
   const product = props.product;
 
   const [imageSrc, setImageSrc] = useState(props.product.image);
+  const imageFallback="./assets/fallback-image.png"
 
   const heartColor = props.isFavorite ? "fill-red-500 stroke-red-500" : "stroke-stone-500";
   return (
@@ -33,7 +33,7 @@ export function ProductCard(props: ProductCardType) {
               className="h-32 mix-blend-multiply group-hover:scale-110 transition-transform"
               alt={product.title}
               src={imageSrc}
-              onError={() => setImageSrc(props.imageFallback)}
+              onError={() => setImageSrc(imageFallback)}
             />
           </a>
         </div>
