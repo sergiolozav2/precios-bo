@@ -16,7 +16,7 @@ export function FavoriteProductsContent() {
     );
   }
   return (
-    <div className="py-4 flex-1 max-h-[36rem] gap-2 grid grid-cols-2 text-left overflow-auto">
+    <div className="flex-1 max-h-[36rem] gap-2 grid grid-cols-2 text-left overflow-auto">
       {products.map((product) => (
         <ProductCard
           key={product.title}
