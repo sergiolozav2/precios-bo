@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { Context } from "./Provider";
+import { Context } from "./Context";
 
 export function useCustomContext() {
   const context = useContext(Context);
