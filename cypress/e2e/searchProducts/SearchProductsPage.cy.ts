@@ -16,14 +16,14 @@ describe("Search feature", () => {
     cy.visit(baseUrl);
   });
   it("searches results", () => {
-    cy.get("form").get("input").type(searchProduct);
-    cy.get("form").get("button").click();
+    cy.get("form input").type(searchProduct);
+    cy.get("form button").click();
     cy.contains(`Resultados de '${searchProduct}'`).should("exist");
   });
 
   it("shows products", () => {
-    cy.get("form").get("input").type(searchProduct);
-    cy.get("form").get("button").click();
+    cy.get("form input").type(searchProduct);
+    cy.get("form button").click();
     cy.contains(resultProductsData.data.items[0].title).should("exist");
     cy.contains(resultProductsData.data.items[1].title).should("exist");
     cy.contains(resultProductsData.data.items[2].title).should("exist");
@@ -31,8 +31,8 @@ describe("Search feature", () => {
 
   it("sets url param 'search' on search", () => {
     const urlParam = new URLSearchParams({ search: searchProduct });
-    cy.get("form").get("input").type(searchProduct);
-    cy.get("form").get("button").click();
+    cy.get("form input").type(searchProduct);
+    cy.get("form button").click();
     cy.location("search").should("include", `?${urlParam.toString()}`);
   });
 });
@@ -47,7 +47,7 @@ describe("Load with url param", () => {
   });
 
   it("input takes value from url param", () => {
-    cy.get("form").get("input").should("have.value", searchProduct);
+    cy.get("form input").should("have.value", searchProduct);
   });
 
   it("search takes value from url param", () => {
