@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ProductType, productsEqual } from "../../types/Product";
+import { ProductType, productsEqual } from "../../../types/Product";
 
 const productsKey = "products";
 export function useFavoriteProductsStorage() {

@@ -5,7 +5,7 @@ import {
   DialogPortal,
   DialogTrigger,
 } from "@radix-ui/react-dialog";
-import { useModal } from "../hooks/useModal";
+import { useModal } from "./hooks/useModal";
 import { FavoritesDialogURLName } from "./FavoriteProductsDialog";
 import { SvgIcon } from "../../components/SvgIcon";
 

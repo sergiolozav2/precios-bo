@@ -1,8 +1,8 @@
 import { PageHeaderWrapper } from "../../components/PageHeaderWrapper";
-import { useSearchProducts } from "../../hooks/useSearchProducts";
+import { useSearchProducts } from "./hooks/useSearchProducts";
 import { LoadingWrapper } from "../../components/LoadingWrapper";
 import { ContentProductPage } from "./ContentProductPage";
-import { useSearchQueryParams } from "../../hooks/useSearchQueryParams";
+import { useSearchQueryParams } from "./hooks/useSearchQueryParams";
 import { FloatingButton } from "../favoriteProducts/FloatingButton";
 import { FavoriteProductsDialog } from "../favoriteProducts/FavoriteProductsDialog";
 import { FavoriteProductsProvider } from "../favoriteProducts/providers/FavoriteProductsProvider";

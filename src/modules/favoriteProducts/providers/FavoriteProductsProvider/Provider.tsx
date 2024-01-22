@@ -1,4 +1,4 @@
-import { useFavoriteProductsStorage } from "../../../hooks/useFavoriteProductsStorage";
+import { useFavoriteProductsStorage } from "../../hooks/useFavoriteProductsStorage";
 import { Context } from "./Context";
 
 type ProviderType = {

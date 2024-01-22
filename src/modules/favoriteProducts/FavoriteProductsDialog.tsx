@@ -1,5 +1,5 @@
 import { SvgIcon } from "../../components/SvgIcon";
-import { useModal } from "../hooks/useModal";
+import { useModal } from "./hooks/useModal";
 
 export const FavoritesDialogURLName = "favoritesModal";
 export function FavoriteProductsDialog() {

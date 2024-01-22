@@ -1,4 +1,4 @@
-import { useSearchQueryParams } from "../../../hooks/useSearchQueryParams";
+import { useSearchQueryParams } from "../hooks/useSearchQueryParams";
 import { searchName } from "../SearchProductsPage";
 
 type ProductsResults = {

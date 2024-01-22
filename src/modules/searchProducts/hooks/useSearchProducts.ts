@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { searchProducts } from "../services/searchProducts";
+import { searchProducts } from "../../../services/searchProducts";
 import { useQuery } from "@tanstack/react-query";
 
 export function useSearchProducts(initialQuery: string) {
