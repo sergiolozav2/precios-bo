@@ -1,4 +1,4 @@
-import { resultProductsData } from "./resultProductsData";
+import { resultProductsData } from "../../mock/resultProductsData";
 
 const baseUrl = "http://localhost:5173";
 const apiEndpoint = "/api/search_products/*";
