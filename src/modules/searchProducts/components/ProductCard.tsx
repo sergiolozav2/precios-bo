@@ -20,6 +20,9 @@ export function ProductCard(props: ProductCardType) {
       <button
         className="p-2 right-1.5 top-1.5 rounded-full absolute transition-colors hover:bg-stone-200"
         onClick={props.onFavoriteClick}
+        aria-label="save favorite"
+        role="checkbox"
+        aria-checked={props.isFavorite}
       >
         <SvgIcon
           className={`${heartColor} h-4 fill-none stroke-stone-500 stroke-[70px] overflow-visible`}
