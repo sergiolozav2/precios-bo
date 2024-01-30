@@ -25,7 +25,7 @@ export function ProductCard(props: ProductCardType) {
         aria-checked={props.isFavorite}
       >
         <SvgIcon
-          className={`${heartColor} h-4 fill-none stroke-stone-500 stroke-[70px] overflow-visible`}
+          className={`${heartColor} h-4 fill-none stroke-[70px] overflow-visible`}
           iconName="FaHeart"
         />
       </button>
