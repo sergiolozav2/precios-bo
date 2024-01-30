@@ -22,12 +22,11 @@ export function ErrorCard() {
           </h2>
         </div>
         <p className="sm:text-lg text-stone-800">
-          Y no se pudo realizar la búsqueda,&nbsp;
           <button
             className="sm:text-lg font-semibold w-fit hover:underline"
             onClick={handleReload}
           >
-            intentalo de nuevo
+            Intentalo de nuevo
           </button>
           &nbsp;o regresa más tarde.
         </p>
