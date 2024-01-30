@@ -11,7 +11,7 @@ export const searchName = "search";
 export function SearchProductsPage() {
   const { getValue, updateQuery } = useSearchQueryParams();
   const searchValue = getValue(searchName, "");
-  const { data, loading, neverCalled, searchProducts } =
+  const { data, loading, neverCalled, searchProducts, error } =
     useSearchProducts(searchValue);
 
   function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
@@ -55,6 +55,7 @@ export function SearchProductsPage() {
           data={data}
           loading={loading}
           neverCalled={neverCalled}
+          error={error}
         />
       </div>
       <FloatingButton>
