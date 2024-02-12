@@ -1,0 +1,18 @@
+{
+  "search.header": "Comparador de precios en Bolivia",
+  "search.subheader": "Busca y compara productos ofrecidos por tiendas online bolivianas",
+  "search.input.button": "Buscar",
+  "search.input.placeholder": "Busca comida, bebidas, dulces...",
+  "search.features.title1": "Encuentra productos",
+  "search.features.subtitle1": "Encuentra ropa, comida, laptops, bebidas, etc",
+  "search.features.title2": "Ahorra dinero",
+  "search.features.subtitle2": "Ahorra dinero al comparar precios en múltiples tiendas.",
+  "search.features.title3": "Más rápido",
+  "search.features.subtitle3": "Puedes encontrar rápidamente productos.",
+  "search.error.title": "Ocurrió un problema",
+  "search.error.reload": "Intentalo de nuevo",
+  "search.error.description": "o regresa más tarde.",
+  "search.results.empty": "No se encontró ningún resultado.",
+  "search.results.resultsFor": "Resultados de",
+  "search.results.products": "productos"
+}

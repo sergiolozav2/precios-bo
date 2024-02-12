@@ -1,6 +1,8 @@
+import { useTranslation } from "react-i18next";
 import { SvgIcon } from "../../../components/SvgIcon";
 
 export function ErrorCard() {
+  const { t } = useTranslation();
   function handleReload() {
     window.location.reload();
   }
@@ -18,7 +20,7 @@ export function ErrorCard() {
           />
 
           <h2 className="text-lg sm:text-2xl font-semibold text-stone-700">
-            Ocurrió un problema&nbsp; :(
+            {t("search.error.title")}&nbsp; :(
           </h2>
         </div>
         <p className="sm:text-lg text-stone-800">
@@ -26,9 +28,9 @@ export function ErrorCard() {
             className="sm:text-lg font-semibold w-fit underline"
             onClick={handleReload}
           >
-            Intentalo de nuevo
+            {t("search.error.reload")}
           </button>
-          &nbsp;o regresa más tarde.
+          &nbsp;{t("search.error.description")}
         </p>
       </div>
     </div>

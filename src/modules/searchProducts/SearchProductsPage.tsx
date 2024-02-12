@@ -6,9 +6,11 @@ import { useSearchQueryParams } from "./hooks/useSearchQueryParams";
 import { FloatingButton } from "../favoriteProducts/FloatingButton";
 import { FavoriteProductsDialog } from "../favoriteProducts/FavoriteProductsDialog";
 import { FavoriteProductsProvider } from "../favoriteProducts/providers/FavoriteProductsProvider";
+import { useTranslation } from "react-i18next";
 
 export const searchName = "search";
 export function SearchProductsPage() {
+  const { t } = useTranslation();
   const { getValue, updateQuery } = useSearchQueryParams();
   const searchValue = getValue(searchName, "");
   const { data, loading, neverCalled, searchProducts, error } =
@@ -21,15 +23,16 @@ export function SearchProductsPage() {
     updateQuery(searchName, query);
     searchProducts(query);
   }
+
   return (
     <FavoriteProductsProvider>
       <PageHeaderWrapper>
         <div className="mt-2 sm:mt-8 py-8 px-6 flex text-center flex-col w-full items-center justify-center text-white">
           <h1 className="text-2xl sm:text-3xl font-semibold">
-            Comparador de precios Bolivia
+            {t("search.header")}
           </h1>
           <h2 className="mt-2 text-base sm:text-2xl">
-            Busca y compara productos ofrecidos por tiendas online bolivianas
+            {t("search.subheader")}
           </h2>
           <form
             className="mt-4 gap-2 max-w-[30rem] sm:text-xl w-full flex flex-col sm:flex-row justify-center"
@@ -40,11 +43,11 @@ export function SearchProductsPage() {
               defaultValue={searchValue}
               name={searchName}
               type="text"
-              placeholder="Busca comida, bebidas, dulces..."
+              placeholder={t("search.input.placeholder")}
             />
             <LoadingWrapper className="rounded-lg" loading={loading}>
               <button className="px-2 py-2 w-full rounded-lg font-semibold bg-violet-900">
-                Buscar
+                {t("search.input.button")}
               </button>
             </LoadingWrapper>
           </form>

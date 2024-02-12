@@ -1,0 +1,18 @@
+{
+  "search.header": "Price comparison tool for Bolivia",
+  "search.subheader": "Search and compare products offered by multiple online shoppings",
+  "search.input.button": "Search",
+  "search.input.placeholder": "Search for food, drinks, shoes...",
+  "search.features.title1": "Find products",
+  "search.features.subtitle1": "Find clothing, food, laptops, drinks, etc",
+  "search.features.title2": "Save money",
+  "search.features.subtitle2": "Save money by comparing prices from multiple stores.",
+  "search.features.title3": "Fast",
+  "search.features.subtitle3": "Find your favorite products in no time.",
+  "search.error.title": "Unexpected error",
+  "search.error.reload": "Try again",
+  "search.error.description": "or come back later.",
+  "search.results.empty": "No results were found.",
+  "search.results.resultsFor": "Results for",
+  "search.results.products": "products"
+}
