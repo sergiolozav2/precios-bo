@@ -7,8 +7,8 @@ import { FloatingButton } from "../favoriteProducts/FloatingButton";
 import { FavoriteProductsDialog } from "../favoriteProducts/FavoriteProductsDialog";
 import { FavoriteProductsProvider } from "../favoriteProducts/providers/FavoriteProductsProvider";
 import { useTranslation } from "react-i18next";
+import { searchName } from "./utils/urlQueryNames";
 
-export const searchName = "search";
 export function SearchProductsPage() {
   const { t } = useTranslation();
   const { getValue, updateQuery } = useSearchQueryParams();

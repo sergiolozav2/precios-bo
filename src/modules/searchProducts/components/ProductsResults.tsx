@@ -1,6 +1,6 @@
 import { useTranslation } from "react-i18next";
 import { useSearchQueryParams } from "../hooks/useSearchQueryParams";
-import { searchName } from "../SearchProductsPage";
+import { searchName } from "../utils/urlQueryNames";
 
 type ProductsResults = {
   numberResults: number;
