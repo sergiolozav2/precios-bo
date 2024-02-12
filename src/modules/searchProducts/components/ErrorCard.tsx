@@ -23,7 +23,7 @@ export function ErrorCard() {
         </div>
         <p className="sm:text-lg text-stone-800">
           <button
-            className="sm:text-lg font-semibold w-fit hover:underline"
+            className="sm:text-lg font-semibold w-fit underline"
             onClick={handleReload}
           >
             Intentalo de nuevo
