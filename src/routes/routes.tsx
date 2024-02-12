@@ -1,8 +1,10 @@
 import { createBrowserRouter } from "react-router-dom";
 import App from "../App";
 import { SearchProductsPage } from "../modules/searchProducts/SearchProductsPage";
-import { FunctionPage } from "../modules/guide_blog/FunctionPage";
+import { Suspense } from "react";
 import { ContactPage } from "../pages/ContactPage";
+import { FunctionPage } from "./lazyModules";
+import { SuspenseFallbackPage } from "../components/SuspenseFallbackPage";
 
 export const routesNames = {
   Inicio: "/",
@@ -21,7 +23,11 @@ export const router = createBrowserRouter([
       },
       {
         path: routesNames.Funcion,
-        element: <FunctionPage />,
+        element: (
+          <Suspense fallback={<SuspenseFallbackPage />}>
+            <FunctionPage />
+          </Suspense>
+        ),
       },
       {
         path: routesNames.Contacto,

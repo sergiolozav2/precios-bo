@@ -3,7 +3,7 @@ import { AuthorCard } from "./components/AuthorCard";
 import { CodeSection } from "./components/CodeSection";
 import { CommandSpan } from "./components/CommandSpan";
 
-export function FunctionPage() {
+export default function FunctionPage() {
   return (
     <>
       <PageHeaderWrapper minHeight="200px">
@@ -217,17 +217,17 @@ export function FunctionPage() {
           />
           <p>
             Si todo salio bien, deberían mostrarse los resultados al apretar el
-            botón de buscar. Funciona! 🥳🎉
+            botón de buscar.
           </p>
           <img src="./assets/blog/resultados.png" />
-          <p> </p>
+          <p> Funciona! 🥳🎉</p>
           <h2 className="text-2xl font-semibold">Últimas palabras</h2>
           <p>
             En este caso fue bastante sencillo crear un webscrapper y mostrar
             los resultados en una aplicación de React.
           </p>
           <p>
-            Aunque otros sitios requieren iniciar sesión, resolver
+            Pero otros sitios requieren iniciar sesión, resolver
             captchas o bloqueen actividad sospechosa, sin embargo, donde hay
             voluntad, hay un camino.
           </p>
