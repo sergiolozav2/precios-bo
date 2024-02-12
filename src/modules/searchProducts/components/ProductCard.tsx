@@ -2,6 +2,7 @@ import { useState } from "react";
 import { ProductType } from "../../../types/Product";
 import { SupermarketAvatar } from "./SupermarketAvatar";
 import { SvgIcon } from "../../../components/SvgIcon";
+import { useTranslation } from "react-i18next";
 
 type ProductCardType = {
   product: ProductType;
@@ -12,6 +13,7 @@ export function ProductCard(props: ProductCardType) {
   const product = props.product;
 
   const [imageSrc, setImageSrc] = useState(props.product.image);
+  const { t } = useTranslation()
   const imageFallback="./assets/fallback-image.png"
 
   const heartColor = props.isFavorite ? "fill-red-500 stroke-red-500" : "stroke-stone-500";
@@ -20,7 +22,7 @@ export function ProductCard(props: ProductCardType) {
       <button
         className="p-2 right-1.5 top-1.5 rounded-full absolute transition-colors hover:bg-stone-200"
         onClick={props.onFavoriteClick}
-        aria-label="save favorite"
+        aria-label={t("favorites.save.button.aria")}
         role="checkbox"
         aria-checked={props.isFavorite}
       >

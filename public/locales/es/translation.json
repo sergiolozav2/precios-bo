@@ -18,5 +18,10 @@
   "navbar.start": "Inicio",
   "navbar.blog": "Blog",
   "navbar.documentation": "Documentación",
-  "navbar.contact": "Contacto"
+  "navbar.contact": "Contacto",
+  "favorites.save.button.aria": "guardar producto",
+  "favorites.dialog.close": "Cerrar",
+  "favorites.dialog.title": "Productos favoritos",
+  "favorites.dialog.empty": "No tienes productos favoritos guardados.",
+  "favorites.button.title": "Mis favoritos"
 }

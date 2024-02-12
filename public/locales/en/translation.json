@@ -14,9 +14,14 @@
   "search.error.description": "or come back later.",
   "search.results.empty": "No results were found.",
   "search.results.resultsFor": "Results for",
-  "search.results.products": "productos",
+  "search.results.products": "products",
   "navbar.start": "Home",
   "navbar.blog": "Blog",
   "navbar.documentation": "Documentation",
-  "navbar.contact": "Contact"  
+  "navbar.contact": "Contact",
+  "favorites.save.button.aria": "save product",
+  "favorites.dialog.close": "Close",
+  "favorites.dialog.title": "Favorite products",
+  "favorites.dialog.empty": "Your favorites list is currently empty.",
+  "favorites.button.title": "My favorites"
 }

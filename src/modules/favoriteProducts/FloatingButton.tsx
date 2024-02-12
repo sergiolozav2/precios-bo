@@ -8,6 +8,7 @@ import {
 import { useModal } from "./hooks/useModal";
 import { FavoritesDialogURLName } from "./FavoriteProductsDialog";
 import { SvgIcon } from "../../components/SvgIcon";
+import { useTranslation } from "react-i18next";
 
 type FloatingButtonType = {
   children: React.ReactNode;
@@ -15,6 +16,8 @@ type FloatingButtonType = {
 
 export function FloatingButton(props: FloatingButtonType) {
   const { show, toggleModal } = useModal(FavoritesDialogURLName);
+  const { t } = useTranslation();
+
   return (
     <div className="fixed right-12 bottom-3">
       <Dialog open={show}>
@@ -24,7 +27,7 @@ export function FloatingButton(props: FloatingButtonType) {
             onClick={toggleModal}
           >
             <div className="px-4 py-2 min-w-56 hidden sm:flex justify-between">
-              <span> Mis favoritos </span>
+              <span> {t("favorites.button.title")} </span>
               <SvgIcon className="h-5" iconName="MdKeyboardDoubleArrowUp" />
             </div>
             <div className="p-3 sm:hidden">
