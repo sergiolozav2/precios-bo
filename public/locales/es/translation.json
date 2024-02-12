@@ -14,5 +14,9 @@
   "search.error.description": "o regresa más tarde.",
   "search.results.empty": "No se encontró ningún resultado.",
   "search.results.resultsFor": "Resultados de",
-  "search.results.products": "productos"
+  "search.results.products": "productos",
+  "navbar.start": "Inicio",
+  "navbar.blog": "Blog",
+  "navbar.documentation": "Documentación",
+  "navbar.contact": "Contacto"
 }

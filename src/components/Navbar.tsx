@@ -1,7 +1,9 @@
+import { useTranslation } from "react-i18next";
 import { routesNames } from "../routes/routes";
 import { NavbarLink } from "./NavbarLink";
 
 export function Navbar() {
+  const { t } = useTranslation();
   return (
     <nav className="p-4 absolute top-0 flex justify-between items-center w-full bg-transparent text-white">
       <div className="flex items-center">
@@ -12,10 +14,10 @@ export function Navbar() {
       </div>
 
       <div className="gap-6 hidden md:flex">
-        <NavbarLink label="Inicio" to={routesNames.Inicio} />
-        <NavbarLink label="Función" to={routesNames.Funcion} />
-        <NavbarLink label="Documentación" to="/" />
-        <NavbarLink label="Contacto" to={routesNames.Contacto} />
+        <NavbarLink label={t("navbar.start")} to={routesNames.Inicio} />
+        <NavbarLink label={t("navbar.blog")} to={routesNames.Funcion} />
+        <NavbarLink label={t("navbar.documentation")} to="/" />
+        <NavbarLink label={t("navbar.contact")} to={routesNames.Contacto} />
       </div>
     </nav>
   );

@@ -14,5 +14,9 @@
   "search.error.description": "or come back later.",
   "search.results.empty": "No results were found.",
   "search.results.resultsFor": "Results for",
-  "search.results.products": "products"
+  "search.results.products": "productos",
+  "navbar.start": "Home",
+  "navbar.blog": "Blog",
+  "navbar.documentation": "Documentation",
+  "navbar.contact": "Contact"  
 }
