@@ -1,5 +1,5 @@
 import { useTranslation } from "react-i18next";
-import { routesNames } from "../routes/routes";
+import { routesNames } from "../routes/routesNames";
 import { NavbarLink } from "./NavbarLink";
 
 export function Navbar() {

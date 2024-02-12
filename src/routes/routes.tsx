@@ -5,12 +5,7 @@ import { Suspense } from "react";
 import { ContactPage } from "../pages/ContactPage";
 import { FunctionPage } from "./lazyModules";
 import { SuspenseFallbackPage } from "../components/SuspenseFallbackPage";
-
-export const routesNames = {
-  Inicio: "/",
-  Funcion: "/functions",
-  Contacto: "/contact",
-};
+import { routesNames } from "./routesNames";
 
 export const router = createBrowserRouter([
   {
