@@ -1,7 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import App from "../App";
 import { SearchProductsPage } from "../modules/searchProducts/SearchProductsPage";
-import { FunctionPage } from "../pages/FunctionPage";
+import { FunctionPage } from "../modules/guide_blog/FunctionPage";
 import { ContactPage } from "../pages/ContactPage";
 
 export const routesNames = {
