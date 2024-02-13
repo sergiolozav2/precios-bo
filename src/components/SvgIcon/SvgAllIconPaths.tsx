@@ -1,3 +1,4 @@
+import { FaAngleDown } from "./IconsPaths/FaAngleDown";
 import { FaHeart } from "./IconsPaths/FaHeart";
 import { FaMoneyCheckDollar } from "./IconsPaths/FaMoneyCheckDollar";
 import { FaShoppingCart } from "./IconsPaths/FaShoppingCart";
@@ -16,4 +17,5 @@ export const Icons = {
   MdQueryBuilder: { path: <MdQueryBuilder />, viewBox: "0 0 24 24" },
   IoMdClose: { path: <IoMdClose />, viewBox: "0 0 512 512" },
   MdSearchOff: { path: <MdSearchOff />, viewBox: "0 0 24 24" },
+  FaAngleDown: { path: <FaAngleDown />, viewBox: "0 0 448 512"}
 };
