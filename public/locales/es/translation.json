@@ -23,5 +23,72 @@
   "favorites.dialog.close": "Cerrar",
   "favorites.dialog.title": "Productos favoritos",
   "favorites.dialog.empty": "No tienes productos favoritos guardados.",
-  "favorites.button.title": "Mis favoritos"
+  "favorites.button.title": "Mis favoritos",
+  "blog": {
+    "title": "Programando un comparador de precios con Typescript",
+    "description": "Incluyendo React y Fastify.",
+    "date": "Enero 30, 2024",
+    "content": {
+      "intro": "No hay nada mejor que encontrar tu producto favorito con un mejor precio y sin mucho esfuerzo. Esto me motivó a desarrollar esta aplicación web que obtiene los precios de distintas tiendas online de Bolivia para comparar los resultados fácilmente.",
+      "info": "Este proyecto y el de la guía solo tienen fines educativos, y el código está disponible en Github.",
+      "purpose": "En este post, explicaré como puedes desarrollar un proyecto parecido con el buscador de imágenes de Google utilizando React y Fastify con Typescript.",
+      "definitions": {
+        "title": "Primero algunos conceptos importantes",
+        "question1": "¿Qué es web scraping?",
+        "answer1": "Web scraping consiste en extraer información de sitios web de forma automatizada. La idea básica es obtener el código HTML de un sitio web, identificar los datos usando un lenguaje de programación y convertirlo a un formato sencillo de utilizar como JSON.",
+        "question2": "¿Qué es React?",
+        "answer2": "React es una librería de Javascript usada para construir interfaces de usuario con JSX. Lo utilizaremos para mostrar los resultados de Google y la barra de búsqueda.",
+        "question3": "¿Qué es Fastify?",
+        "answer3": "Fastify es un framework para crear APIs de alto rendimiento con NodeJS. Lo usaremos como servidor para realizar web scraping y envíar los resultados a nuestro cliente en React."
+      },
+      "steps": {
+        "title": "Comencemos!",
+        "intro1": "El primer paso es instalar <0>{{link}}</0>, si ya está instalado continúa con el siguiente paso.",
+        "step1": {
+          "title": "Preparar proyecto de Fastify",
+          "dependencies": "En una terminal, ejecuta los siguientes comandos para crear un proyecto e instalar fastify, node-html-parser y axios:",
+          "scripts": "Añade las siguientes líneas a 'scripts' del archivo package.json que se creó:",
+          "tsconfig": "Crea la configuración de typescript:",
+          "indexcode": "Ahora crea un archivo llamado <0>{{filename}}</0> y agrega este código al archivo para crear un servidor web sencillo:",
+          "testserver": "Ejecuta <0>{{command1}}</0> para iniciar el servidor y podrás envíar solicitudes HTTP a <0>{{command2}}</0>. Puedes comprobarlo ingresando a esa dirección desde tu navegador:"
+        },
+        "step2": {
+          "title": "Construir web scraper con node-html-parser",
+          "newfile": "Crea un archivo llamado <0>{{command1}}</0> y agrega las siguientes funciones:",
+          "explanation": "Actualmente no hace nada, pero demuestra la esencia de la recolección de datos. La función <0>{{command1}}</0> obtiene el código HTML de Google, y lo convierte a un objeto de tipo <0>{{command2}}</0>.",
+          "implementation": "Cada sitio web es diferente, pero con ayuda de <0>{{library1}}</0> podemos obtener los datos que necesitamos. Para nuestro ejemplo de Google Images el código de las funciones anteriores es el siguiente:",
+          "codeexplanation": "La primera función solo hace una petición GET a un website y retorna su código HTML como una cadena de texto. La segunda función convierte el texto en un objeto DOM, lo cuál nos permite usar selectores CSS para obtener los títulos e imágenes de todos los resultados encontrados."
+        },
+        "step3": {
+          "title": "Crear endpoint con Fastify",
+          "laststep": "El último paso con el backend, es registrar una nueva ruta en <0>{{command1}}</0>. Esta ruta retornará los resultados de Google al hacer una petición GET a la ruta <0>{{command2}}</0>.",
+          "info": "Recuerda reiniciar el servidor de Fastify para poder utilizar esta ruta."
+        },
+        "step4": {
+          "title": "Preparar proyecto de React",
+          "dependencies": "Primero creamos un proyecto con Vite e instalamos las dependencias",
+          "explanation": "Vite creará varios archivos, pero solo nos interesa <0>{{command1}}</0>. Eliminaremos el código generado por Vite, y crearemos nuestro propio componente de esta forma:"
+        },
+        "step5": {
+          "title": "Mostrando las imágenes",
+          "plan": "Para mostrar las imágenes, se requiere de los siguientes pasos:",
+          "steps": {
+            "0": "Crear variable de estado para valor de búsqueda.",
+            "1": "Crear variable de estado para los productos.",
+            "2": "Crear una función que ejecute la ruta de web scraping de nuestro servidor de Fastify.",
+            "3": "Enlazar esa función al botón de búsqueda.",
+            "4": "Mostrar la lista de productos."
+          },
+          "results": "Si todo salio bien, deberían mostrarse los resultados luego de apretar el botón de buscar.",
+          "success": "Funciona! 🥳🎉"
+        }
+      },
+      "conclusion": {
+        "title": "Últimas palabras",
+        "summary": "En este caso fue bastante sencillo crear un web scraper y mostrar los resultados en una aplicación de React.",
+        "others": "Pero otros sitios requieren iniciar sesión, resolver captchas o bloqueen actividad sospechosa, sin embargo, todo eso es posible usando técnicas más avanzadas de web scraping, así que buena suerte!",
+        "goodbye": "Hasta luego!"
+      }
+    }
+  }
 }

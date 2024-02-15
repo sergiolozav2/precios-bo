@@ -1,8 +1,8 @@
 {
   "search.header": "Price comparison tool for Bolivia",
-  "search.subheader": "Search and compare products offered by multiple online shoppings",
+  "search.subheader": "Search and compare products offered by Bolivian online stores",
   "search.input.button": "Search",
-  "search.input.placeholder": "Search for food, drinks, shoes...",
+  "search.input.placeholder": "Search for food, drinks, sweets...",
   "search.features.title1": "Find products",
   "search.features.subtitle1": "Find clothing, food, laptops, drinks, etc",
   "search.features.title2": "Save money",
@@ -12,7 +12,7 @@
   "search.error.title": "Unexpected error",
   "search.error.reload": "Try again",
   "search.error.description": "or come back later.",
-  "search.results.empty": "No results were found.",
+  "search.results.empty": "No results found.",
   "search.results.resultsFor": "Results for",
   "search.results.products": "products",
   "navbar.start": "Home",
@@ -23,5 +23,72 @@
   "favorites.dialog.close": "Close",
   "favorites.dialog.title": "Favorite products",
   "favorites.dialog.empty": "Your favorites list is currently empty.",
-  "favorites.button.title": "My favorites"
+  "favorites.button.title": "My favorites",
+  "blog": {
+    "title": "Building a price comparison app with Typescript",
+    "description": "Using React and Fastify.",
+    "date": "January 30, 2024",
+    "content": {
+      "intro": "There is nothing better than finding your favorite product at a better price with little effort. This motivated me to develop this web application that fetches the prices from various Bolivian online stores to easily compare the results.",
+      "info": "This project and the guide were made for learning purposes, and the code is available on Github.",
+      "purpose": "In this post, I'll explain how you can develop a similar project with Google Images search results using React, Fastify, and Typescript.",
+      "definitions": {
+        "title": "Some important concepts first",
+        "question1": "What is web scraping?",
+        "answer1": "Web scraping involves extracting information from websites automatically. The basic idea is to obtain the HTML code of a website, identify the data using a programming language, and convert it into an easy-to-use format such as JSON.",
+        "question2": "What is React?",
+        "answer2": "React is a Javascript library used to build user interfaces with JSX. We'll use it to display the results from Google and the search bar.",
+        "question3": "What is Fastify?",
+        "answer3": "Fastify is a framework used to create high-performance APIs with NodeJS. We'll use it as a server to web scrap data and send the results to our React app client."
+      },
+      "steps": {
+        "title": "Let's get started!",
+        "intro1": "The first step is installing <0>{{link}}</0>, if it's already installed, proceed to the next step.",
+        "step1": {
+          "title": "Setup Fastify project",
+          "dependencies": "In a terminal, run the following commands to install fastify, node-html-parser, and axios:",
+          "scripts": "Add the following lines to the 'scripts' section of the package.json that was created:",
+          "tsconfig": "Create the typescript configuration:",
+          "indexcode": "Now create a file called <0>{{filename}}</0> and add this code to create a basic web server:",
+          "testserver": "Run <0>{{command1}}</0> to start the server and you'll be able to send HTTP requests to <0>{{command2}}</0>. You can check it by entering that address in your browser:"
+        },
+        "step2": {
+          "title": "Build a web scraper with node-html-parser",
+          "newfile": "Create a file called <0>{{command1}}</0> and add the following functions:",
+          "explanation": "Currently, it doesn't do anything, but it demonstrates the essence of web scraping. The function <0>{{command1}}</0> fetches the HTML code from Google and converts it into an object of type <0>{{command2}}</0>.",
+          "implementation": "Every website is different, but with the help of <0>{{library1}}</0>, we can retrieve the data we need. For our Google Images example, the code for the above functions is as follows:",
+          "codeexplanation": "The first function simply makes a GET request to a website and returns its HTML code as a string. The second function parses that string into an usable DOM object, allowing us to use CSS selectors to obtain the image links and titles of all the results found."
+        },
+        "step3": {
+          "title": "Create a Fastify endpoint",
+          "laststep": "The final step with the backend is to register a new route in <0>{{command1}}</0>. This route will return the results from Google when we make GET requests to the route <0>{{command2}}</0>.",
+          "info": "Remember to restart the Fastify server to use the new route."
+        },
+        "step4": {
+          "title": "Setup the React project",
+          "dependencies": "First, we create a project with Vite and install the dependencies.",
+          "explanation": "Vite will create several files, but we're only interested in <0>{{command1}}</0>. We'll remove the code generated by Vite to create our own component like this one:"
+        },
+        "step5": {
+          "title": "Displaying the images",
+          "plan": "To display the images, the following steps are required:",
+          "steps": {
+            "0": "Create a state variable for the search value.",
+            "1": "Create a state variable for the products.",
+            "2": "Create a function that calls our Fastify server's web scraping endpoint.",
+            "3": "Link that function to the search button.",
+            "4": "Display the list of products."
+          },
+          "results": "If everything went well, the results should be displayed after clicking the search button.",
+          "success": "It works! 🥳🎉"
+        }
+      },
+      "conclusion": {
+        "title": "Last words",
+        "summary": "In this case, it was pretty simple to create a web scraper and display the results in a React application.",
+        "others": "But other websites may require logging in, solving captchas, or the website might block suspicious activity. However, all of this is possible using more advanced web scraping techniques, so good luck!",
+        "goodbye": "Bye!"
+      }
+    }
+  }
 }
