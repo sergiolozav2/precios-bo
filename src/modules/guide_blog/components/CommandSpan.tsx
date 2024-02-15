@@ -1,5 +1,5 @@
 type CommandSpanType = {
-  children: React.ReactNode;
+  children?: React.ReactNode;
 };
 
 export function CommandSpan(props: CommandSpanType) {
