@@ -21,6 +21,7 @@ function marketNameToImage(marketName: string) {
     Fidalga: "/assets/fidalga-logo.png",
     Icnorte: "/assets/icnorte-logo.jpg",
     "El GenioX": "/assets/geniox-logo.png",
+    Dismac: "/assets/dismac-logo.png"
   };
 
   return mapMarketToImage[marketName];
