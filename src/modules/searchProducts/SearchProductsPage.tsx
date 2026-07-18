@@ -47,7 +47,7 @@ export function SearchProductsPage() {
 						/>
 						<LoadingWrapper className="rounded-lg" loading={loading}>
 							<button
-								type="button"
+								type="submit"
 								className="px-2 py-2 w-full rounded-lg font-semibold bg-violet-900"
 							>
 								{t("search.input.button")}

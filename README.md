@@ -1,61 +1,59 @@
 # PrecioBO
 
-React price-search frontend with a Cloudflare Pages Function API.
+Price search and comparison for stores in Bolivia.
 
-## Local development
+![Demo PrecioBo](https://raw.githubusercontent.com/sergiolozav2/precios-bo/67d2985cc7904a5e00a6feef1c74aff43da3f3c3/docs/intro.gif)
 
-Install dependencies and run the production-shaped Pages environment:
+## Setup
 
 ```bash
 npm install
 npm run dev:pages
 ```
 
-Wrangler serves the built SPA and the `functions/` routes at
-`http://localhost:8788`.
+The app runs at `http://localhost:8788`. This starts both the frontend and the
+Pages Functions.
 
-For frontend-only development with Vite hot reload:
+For frontend-only work with hot reload:
 
 ```bash
 npm run dev
 ```
 
-The Vite-only server does not execute Pages Functions.
-
-## API
-
-```text
-GET /api/search_products/products?search=<query>
-```
-
-The response keeps successful retailer results even when another retailer fails:
-
-```json
-{
-  "items": [],
-  "errors": [
-    {
-      "source": "Dismac",
-      "message": "Retailer error"
-    }
-  ]
-}
-```
-
-The Pages Function currently uses the Dismac and Hipermaxi services. Set
-`DISMAC_SEARCH_URL` or `HIPERMAXI_SEARCH_URL` in `.dev.vars` or the Cloudflare
-Pages environment when either API URL differs from its legacy default. These
-overrides also make it possible to validate the complete Function locally
-against deterministic fixture servers.
-
-## Validation
+## Commands
 
 ```bash
 npm test
 npm run lint
 npm run build
-npx wrangler pages functions build
 ```
 
-The unit tests call the retailer service implementations through small injected
-clients; they do not require Fastify, Supertest, MSW, or live retailer requests.
+## Core tools
+
+React, TypeScript, Vite, Tailwind CSS, TanStack Query, Cloudflare Pages, and
+Vitest.
+
+## Deploy to Cloudflare Pages
+
+Wrangler is installed locally with `npm install`. Sign in to Cloudflare once:
+
+```bash
+npx wrangler login
+```
+
+If the Pages project does not exist yet, create it once:
+
+```bash
+npx wrangler pages project create preciobo --production-branch main
+```
+
+Build and deploy:
+
+```bash
+npm run build
+npx wrangler pages deploy dist --project-name preciobo
+```
+
+Retailer endpoints can be overridden with `DISMAC_SEARCH_URL`,
+`HIPERMAXI_SEARCH_URL`, `GENIOX_SEARCH_URL`, and `ICNORTE_SEARCH_URL` in the
+Cloudflare Pages environment variables.
