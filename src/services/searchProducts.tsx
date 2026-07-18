@@ -5,8 +5,8 @@ import { ApiReturnType } from "./types";
 export async function searchProducts(
   query: string
 ): ApiReturnType<{ items: ProductType[] }> {
-  const response = await backend.get(
-    `search_products/products?search=${query}`
-  );
+  const response = await backend.get("search_products/products", {
+    params: { search: query },
+  });
   return { data: response.data };
 }

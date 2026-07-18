@@ -21,7 +21,7 @@ export function LanguageSwitcher() {
     setLanguage(language);
   }
   return (
-    <Select onValueChange={changeLanguage}>
+    <Select  onValueChange={changeLanguage}>
       <SelectTrigger className="px-2 py-1 gap-1 uppercase focus:outline focus:outline-2 focus:outline-purple-900 font-medium rounded-md flex items-center text-stone-100 bg-stone-100/35">
         {currentLanguage}
         <SelectIcon>
@@ -30,7 +30,7 @@ export function LanguageSwitcher() {
       </SelectTrigger>
       <SelectPortal>
         <SelectContent
-          className="rounded-md overflow-hidden relative bg-white"
+          className="z-20 rounded-md overflow-hidden relative bg-white"
           position="popper"
           sideOffset={4}
           align="end"

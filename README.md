@@ -1,30 +1,61 @@
-# React + TypeScript + Vite
+# PrecioBO
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+React price-search frontend with a Cloudflare Pages Function API.
 
-Currently, two official plugins are available:
+## Local development
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Install dependencies and run the production-shaped Pages environment:
 
-## Expanding the ESLint configuration
+```bash
+npm install
+npm run dev:pages
+```
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+Wrangler serves the built SPA and the `functions/` routes at
+`http://localhost:8788`.
 
-- Configure the top-level `parserOptions` property like this:
+For frontend-only development with Vite hot reload:
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
+```bash
+npm run dev
+```
+
+The Vite-only server does not execute Pages Functions.
+
+## API
+
+```text
+GET /api/search_products/products?search=<query>
+```
+
+The response keeps successful retailer results even when another retailer fails:
+
+```json
+{
+  "items": [],
+  "errors": [
+    {
+      "source": "Dismac",
+      "message": "Retailer error"
+    }
+  ]
 }
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+The Pages Function currently uses the Dismac and Hipermaxi services. Set
+`DISMAC_SEARCH_URL` or `HIPERMAXI_SEARCH_URL` in `.dev.vars` or the Cloudflare
+Pages environment when either API URL differs from its legacy default. These
+overrides also make it possible to validate the complete Function locally
+against deterministic fixture servers.
+
+## Validation
+
+```bash
+npm test
+npm run lint
+npm run build
+npx wrangler pages functions build
+```
+
+The unit tests call the retailer service implementations through small injected
+clients; they do not require Fastify, Supertest, MSW, or live retailer requests.

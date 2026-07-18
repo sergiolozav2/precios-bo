@@ -8,6 +8,7 @@ export function useSearchProducts(initialQuery: string) {
     queryKey: ["search-products", query],
     queryFn: () => searchProducts(query),
     enabled: false,
+    retry: 1,
   });
   useEffect(() => {
     if (query !== "") {
