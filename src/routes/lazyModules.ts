@@ -1,5 +1,5 @@
 import { lazy } from "react";
 
-export const FunctionPage = lazy(
+export const BlogPage = lazy(
   () => import("../modules/guide_blog/FunctionPage")
 );

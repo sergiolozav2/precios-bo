@@ -47,7 +47,7 @@ export function Navbar() {
 						label={t("navbar.start")}
 						to={routesNames.Inicio + search}
 					/>
-					<NavbarLink label={t("navbar.blog")} to={routesNames.Funcion} />
+					<NavbarLink label={t("navbar.blog")} to={routesNames.Blog} />
 					<NavbarLink label={t("navbar.github")} to={githubUrl} external />
 					<LanguageSwitcher />
 				</div>

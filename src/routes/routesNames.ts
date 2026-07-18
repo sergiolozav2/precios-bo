@@ -1,6 +1,6 @@
 
 export const routesNames = {
   Inicio: "/",
-  Funcion: "/functions",
+  Blog: "/blog/how-does-it-work",
   Contacto: "/contact",
 };
