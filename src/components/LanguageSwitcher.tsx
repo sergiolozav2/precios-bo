@@ -21,11 +21,11 @@ export function LanguageSwitcher() {
     setLanguage(language);
   }
   return (
-    <Select  onValueChange={changeLanguage}>
-      <SelectTrigger className="px-2 py-1 gap-1 uppercase focus:outline focus:outline-2 focus:outline-purple-900 font-medium rounded-md flex items-center text-stone-100 bg-stone-100/35">
+    <Select onValueChange={changeLanguage}>
+      <SelectTrigger className="px-2 py-1 gap-1 uppercase focus:outline focus:outline-2 focus:outline-purple-900 font-medium rounded-md flex items-center text-purple-700 bg-purple-100 md:text-stone-100 md:bg-stone-100/35">
         {currentLanguage}
         <SelectIcon>
-          <SvgIcon className="h-3 text-stone-100" iconName="FaAngleDown" />
+          <SvgIcon className="h-3 text-purple-700 md:text-stone-100" iconName="FaAngleDown" />
         </SelectIcon>
       </SelectTrigger>
       <SelectPortal>
