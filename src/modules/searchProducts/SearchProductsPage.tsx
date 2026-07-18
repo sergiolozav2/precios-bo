@@ -10,60 +10,63 @@ import { useTranslation } from "react-i18next";
 import { searchName } from "./utils/urlQueryNames";
 
 export function SearchProductsPage() {
-  const { t } = useTranslation();
-  const { getValue, updateQuery } = useSearchQueryParams();
-  const searchValue = getValue(searchName, "");
-  const { data, loading, neverCalled, searchProducts, error } =
-    useSearchProducts(searchValue);
+	const { t } = useTranslation();
+	const { getValue, updateQuery } = useSearchQueryParams();
+	const searchValue = getValue(searchName, "");
+	const { data, loading, neverCalled, searchProducts, error } =
+		useSearchProducts(searchValue);
 
-  function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
-    event.preventDefault();
-    const formData = new FormData(event.currentTarget);
-    const query = formData.get(searchName)?.toString() ?? "";
-    updateQuery(searchName, query);
-    searchProducts(query);
-  }
+	function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+		event.preventDefault();
+		const formData = new FormData(event.currentTarget);
+		const query = formData.get(searchName)?.toString() ?? "";
+		updateQuery(searchName, query);
+		searchProducts(query);
+	}
 
-  return (
-    <FavoriteProductsProvider>
-      <PageHeaderWrapper>
-        <div className="mt-2 sm:mt-8 py-8 px-6 flex text-center flex-col w-full items-center justify-center text-white">
-          <h1 className="text-2xl sm:text-3xl font-semibold">
-            {t("search.header")}
-          </h1>
-          <h2 className="mt-2 text-base sm:text-2xl">
-            {t("search.subheader")}
-          </h2>
-          <form
-            className="mt-4 gap-2 max-w-[30rem] sm:text-xl w-full flex flex-col sm:flex-row justify-center"
-            onSubmit={handleSubmit}
-          >
-            <input
-              className="px-4 py-2 w-full rounded-lg outline-none text-black"
-              defaultValue={searchValue}
-              name={searchName}
-              type="text"
-              placeholder={t("search.input.placeholder")}
-            />
-            <LoadingWrapper className="rounded-lg" loading={loading}>
-              <button className="px-2 py-2 w-full rounded-lg font-semibold bg-violet-900">
-                {t("search.input.button")}
-              </button>
-            </LoadingWrapper>
-          </form>
-        </div>
-      </PageHeaderWrapper>
-      <div className="max-w-6xl mx-auto">
-        <ContentProductPage
-          data={data}
-          loading={loading}
-          neverCalled={neverCalled}
-          error={error}
-        />
-      </div>
-      <FloatingButton>
-        <FavoriteProductsDialog />
-      </FloatingButton>
-    </FavoriteProductsProvider>
-  );
+	return (
+		<FavoriteProductsProvider>
+			<PageHeaderWrapper>
+				<div className="mt-2 sm:mt-8 py-8 px-6 flex text-center flex-col w-full items-center justify-center text-white">
+					<h1 className="text-2xl sm:text-3xl font-semibold">
+						{t("search.header")}
+					</h1>
+					<h2 className="mt-2 text-base sm:text-2xl">
+						{t("search.subheader")}
+					</h2>
+					<form
+						className="mt-4 gap-2 max-w-[30rem] sm:text-xl w-full flex flex-col sm:flex-row justify-center"
+						onSubmit={handleSubmit}
+					>
+						<input
+							className="px-4 py-2 w-full rounded-lg outline-none text-black"
+							defaultValue={searchValue}
+							name={searchName}
+							type="text"
+							placeholder={t("search.input.placeholder")}
+						/>
+						<LoadingWrapper className="rounded-lg" loading={loading}>
+							<button
+								type="button"
+								className="px-2 py-2 w-full rounded-lg font-semibold bg-violet-900"
+							>
+								{t("search.input.button")}
+							</button>
+						</LoadingWrapper>
+					</form>
+				</div>
+			</PageHeaderWrapper>
+			<div className="max-w-6xl mx-auto py-8 pb-32">
+				<ContentProductPage
+					data={data}
+					loading={loading}
+					neverCalled={neverCalled}
+					error={error}
+				/>
+			</div>
+			<FloatingButton>
+				<FavoriteProductsDialog />
+			</FloatingButton>
+		</FavoriteProductsProvider>
+	);
 }

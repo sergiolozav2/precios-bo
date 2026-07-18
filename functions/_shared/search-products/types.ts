@@ -1,4 +1,4 @@
-export type ProductSource = "Dismac" | "El GenioX" | "Hipermaxi";
+export type ProductSource = "Dismac" | "El GenioX" | "Hipermaxi" | "Icnorte";
 
 export type Product = {
   image: string;

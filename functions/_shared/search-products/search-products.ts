@@ -1,4 +1,5 @@
 import type { SearchProductsService } from "./search-products-service";
+import { rankProducts } from "./rank-products";
 import type { Product, SearchProductsError, SearchProductsResult } from "./types";
 
 export async function searchProducts(
@@ -27,7 +28,7 @@ export async function searchProducts(
     });
   });
 
-  return { items, errors };
+  return { items: rankProducts(items, query), errors };
 }
 
 function errorMessage(error: unknown): string {

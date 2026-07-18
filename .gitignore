@@ -1,3 +1,6 @@
+# Cloudflare
+_worker.bundle
+
 # Logs
 logs
 *.log
